@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // auto increase the ID of each user
 $allUsers = scandir("dashboard/users/");
 
@@ -19,13 +20,18 @@ if($currentUser == $username.".json"){
   $userObj = json_decode($user);
 
  $emaildb = $userObj -> email;
+ $userdb = $userObj -> username;
+ $pwd = $userObj -> password;
 
+  $_SESSION['mail'] = $emaildb;
+  $_SESSION['user'] = $userdb;
+  $_SESSION['pwd'] = $pwd;
 
-
-
+  include 'mail.php';
+/**
 $to = $emaildb;
 $subject = "Your Password Reset Link";
-$txt = "Hey, you requested to reset your password, here is the link to do that:!". "localhhost/health/reset_pwd.php"."\n".
+$txt = "Hey, you requested to reset your password, here is the link to do that:!". "localhost/health/reset_pwd.php"."\n".
 "Kindly ignore if you did not initiate this request";
 
 $headers = "From: no_reply@adura.com" . "\r\n" .
@@ -42,6 +48,8 @@ $mailto = mail($to,$subject,$txt,$headers);
 else{
 	echo "e no go";
 }
+**/
+
 
  }
 

@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+//if (($_SESSION['role'] != 'Patient' || $_SESSION['role'] != "Staff")){
+//	header("Location:dashboard/error.php");
+//}
 ?>
 
 <!DOCTYPE html>

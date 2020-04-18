@@ -1,28 +1,5 @@
 <?php
-/**
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-require 'PHPMailer/src/Exception.php';
 
-$mail = new PHPMailer\PHPMailer\PHPMailer();
-
-
-$mail -> isSMTP();
-$mail-> SMTPAuth = true;
-$mail -> SMTP ='ssl';
-$mail -> Host ='smtp.gmail.com';
-$mail -> Port ='465';
-$mail -> isHTML();
-$mail -> Username = 'aduramimo@gmail.com';
-$mail -> Password = '!@#qaz123adura';
-$mail -> SetFrom('adura@test.com');
-$mail -> Body = 'A test mail';
-$mail -> AddAddress('drey@adura.gq');
-
-
-$mail -> Send();
-
-**/
 
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\PHPMailer.php";
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\SMTP.php";
@@ -46,18 +23,35 @@ $mail -> Send();
     $mail->Password = "!@#qaz123adura";
 
     //Set Params
+
+//Generate a random string.
+$token = openssl_random_pseudo_bytes(16);
+ 
+//Convert the binary data into hexadecimal representation.
+$token = bin2hex($token);
+
     $mail->SetFrom("aduramimo@gmail.com");
     $mail->AddAddress("$emaildb");
     $mail->Subject = "Your Password Reset Link";
-    $mail->Body = "Hey, you requested to reset your password, here is the link to do that: !". " localhost/StartNG/health/reset_pwd.php"."\n".
+    $mail->Body = "Hey, you requested to reset your password, here is the link to do that: !". " localhost/StartNG/health/reset_pwd.php?token=".$token."\n".
 "Kindly ignore if you did not initiate this request";
 
+file_put_contents("tokens/".$username.".json", json_encode(['token' => $token]));
+
+$_SESSION['token'] = $token;
 
      if(!$mail->Send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
-     } else {
+     } 
+
+
+
+     else {
         echo "<script>"."alert('A reset token has been sent to your email, open it to check')"."</script>";
     echo "<p style='color:green'; 'text-decoration:bold'>"."Check your email at ".$emaildb."</p>";
      }
 
 ?>
+
+<br><br>
+<a href="index.php">Home</a>

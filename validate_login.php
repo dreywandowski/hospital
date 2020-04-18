@@ -50,8 +50,8 @@ if($currentUser == $username.".json"){
     $_SESSION['reg_time'] = $reg_time;
     $_SESSION['login'] = $currTime;
     $_SESSION['fullName'] = $fullName;
-
-
+    $_SESSION['username'] = $username;
+    
  $_SESSION['designation'] = $designation;
 
 //echo $role.$designation;
@@ -63,6 +63,23 @@ if($currentUser == $username.".json"){
   
     $_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>"."User logged in ok"."</p>";
 
+
+switch ($role) {
+    case "Patient":
+        header("Location:dashboard/Patient.php");
+        break;
+    case "Staff":
+        header("Location:dashboard/Staff.php");
+        break;
+    case "admin":
+        header("Location:dashboard/admin.php");
+    
+        break;
+    default:
+        echo "No roles selected";
+}
+
+/**
 // redirect based on access type
     if ($role == "Patient"){
         header("Location:dashboard/Patient.php");
@@ -70,6 +87,7 @@ if($currentUser == $username.".json"){
     else if ($role = "staff"){
       header("Location:dashboard/Staff.php");
     }
+  **/
 
  }
 

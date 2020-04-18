@@ -4,8 +4,9 @@
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\PHPMailer.php";
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\SMTP.php";
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\Exception.php";
-
-
+ 
+    require_once "functions.php";
+    
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->IsSMTP(); 
 
@@ -47,8 +48,7 @@ $_SESSION['token'] = $token;
 
 
      else {
-        echo "<script>"."alert('A reset token has been sent to your email, open it to check')"."</script>";
-    echo "<p style='color:green'; 'text-decoration:bold'>"."Check your email at ".$emaildb."</p>";
+     mailSent();
      }
 
 ?>

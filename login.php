@@ -12,17 +12,9 @@
 <?php
 // this keeps the user logged in
 session_start(); 
+require_once "functions.php";
 
-if(isset($_SESSION['message'])){
-$message = $_SESSION['message'];
-echo "$message";
-session_destroy();	
-}
-
-else{
-	
-}
-
+message();
 
 ?>
 

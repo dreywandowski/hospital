@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "functions.php";
 
 if(isset($_POST['user_mail']) &&
  isset($_POST['pwd']) &&
@@ -42,10 +43,7 @@ $userObj['password']='1';
 $data  = json_encode($userObj);
 
  //$db_save = file_put_contents("dashboard/users/".$username.".json", json_encode($userObj));
-
-  $_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>"."Password reset successful, login with your new details"."</p>";
-  header("Location:index.php");
-
+resetSuccess();
 }
 
 

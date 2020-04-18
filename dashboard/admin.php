@@ -1,9 +1,10 @@
 <?php
 session_start();
 
-if ($_SESSION['role'] != 'admin'){
-	header("Location:error.php");
-}
+require_once "../functions.php";
+
+adminCheck();
+
 $username = $_SESSION['username'];
 ?>
 

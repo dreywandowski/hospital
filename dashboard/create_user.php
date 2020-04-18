@@ -38,18 +38,6 @@ $newUserID = ($countAllusers -1);
 
 //echo $newUserID;
 
-
-/** session variables for use throughout the program
-$_SESSION['first_name'] = $first_name;
-$_SESSION['last_name'] = $last_name;
-$_SESSION['username']  = $username;
-$_SESSION['email'] = $email;
-$_SESSION['role'] = $role;
-$_SESSION['sex'] = $sex;
-$_SESSION['designation'] = $department;
-$_SESSION['ID'] = $newUserID;
-
-**/
 // secure password b4 storing in database
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -93,7 +81,7 @@ if ($db_save){
 
 else{
 
- echo "<script>"."alert('New User created')"."</script>"."<script>"."window.location.replace('admin.php')"."</script>";
+ echo "<script>"."alert('Error creating the user')"."</script>"."<script>"."window.location.replace('admin.php')"."</script>";
     
 }
   

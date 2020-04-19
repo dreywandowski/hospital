@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 $username = $_SESSION['username'];
@@ -11,12 +13,13 @@ if(isset($_POST['date']) &&
 && isset($_POST['department'])){
 
 // data gotten from user
-$date = $_POST['date'];
+$oldDate = $_POST['date'];
 $time = $_POST['time'];
 $nature = $_POST['nature'];
 $complain = $_POST['complain'];
 $department = $_POST['department'];
 
+  $date = date("Y-m-d", strtotime($oldDate));
 
 // get the timestamp
 date_default_timezone_set("Africa/Lagos");

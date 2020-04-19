@@ -104,4 +104,10 @@ header("Location:appointments.php");
 	//echo "<p style='color:orange'; 'text-decoration:bold'>"."Booking exists already"."</p>";
  }
 
+
+ function noAppointments(){
+ 	$_SESSION['message'] = "<p style='color:red'; text-decoration:bold'>". "You have no appointments"."</p>";
+ 	header("Location:Staff.php");
+ }
+
 ?>

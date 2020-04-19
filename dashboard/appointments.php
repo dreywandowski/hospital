@@ -1,3 +1,13 @@
+<!doctype html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Book an Appointment </title>
+		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	
+</head>
+
+
 <?php
 session_start();
 

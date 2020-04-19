@@ -66,7 +66,7 @@ tr:hover {
 <p> <center> <?php echo "<p style='color:red'; 'text-decoration:bold' 'font-size: 20px';>"."Hey  ". $_SESSION['username'].", welcome!!"."</p>" ?></center></p>
 <br><br>
 
-<script src="jquery-3.2.1.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
 
 
 

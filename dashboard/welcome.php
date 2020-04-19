@@ -16,11 +16,9 @@
 
 <br><br>
 <a href="../index.php">Home</a>&nbsp|
-<<<<<<< HEAD
 <a href="../forgot_pwd.php">Reset Password&nbsp|</a>
-=======
 <a href="../forgot_pwd.php">Reset Password</a>
->>>>>>> e99508bb97444cc5a0d35959bac4bb3940dd9711
+
 
 		<script type="text/javascript">
 			var logOut = document.getElementById('logout');

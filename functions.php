@@ -85,12 +85,15 @@ function patientCheck(){
 function bookSuccess(){
 	$_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>"."Your appointment has been booked successfully"."</p>";
 header("Location:appointments.php");
+	//echo "<p style='color:green'; 'text-decoration:bold'>"."Your appointment has been booked successfully"."</p>";
 }
 
 
 function bookFail(){
 	$_SESSION['message'] ="<p style='color:red'; 'text-decoration:bold'>"."Failure booking appointment"."</p>";
 header("Location:appointments.php");
+
+//echo "<p style='color:red'; 'text-decoration:bold'>"."Failure booking appointment"."</p>";
 }
 
 
@@ -98,6 +101,7 @@ header("Location:appointments.php");
 function alreadyExistsBooking(){
 	$_SESSION['message'] ="<p style='color:red'; 'text-decoration:bold'>"."Booking already exists"."</p>";
 header("Location:appointments.php");
+	//echo "<p style='color:orange'; 'text-decoration:bold'>"."Booking exists already"."</p>";
  }
 
 ?>

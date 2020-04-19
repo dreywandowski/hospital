@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+	if(isset($_SESSION['message'])){
+$message = $_SESSION['message'];
+echo "$message";
+//session_destroy();	
+}
+
 require_once "../functions.php";
 
 //$_SESSION['usermame'] = $username;
@@ -29,7 +35,8 @@ $fullName = $_SESSION['fullName']; **/
 
 <body>
 
-<form action="create_appointments.php" enctype="multipart/form-data" method="POST">
+
+<form action="create_appointments.php" id="book" enctype="multipart/form-data" method="POST">
 		
 		<h3><u> Fill in the details</u></h3>
 	</div>
@@ -44,7 +51,7 @@ $fullName = $_SESSION['fullName']; **/
 
 <label for="nature">Nature of Appointment:</label>
 
-		<select name="nature">
+		<select name="nature" id="nature">
   <option>Scan</option>
   <option>Consultation</option>
   <option>Routine check</option>
@@ -60,7 +67,7 @@ $fullName = $_SESSION['fullName']; **/
 </textarea><br><br>
 
 	<label for="Designation">Department:</label>
-			<select name="designation">
+			<select name="department" id="dept">
   <option>Laboratory</option>
   <option>Chemotherapy</option>
   <option>X-Ray</option>
@@ -69,15 +76,19 @@ $fullName = $_SESSION['fullName']; **/
 </select><br><br>
 
 <button id="submit" name= "book" type="submit"> Book Appointment </button>
+
 </form>
 
 
 <br><br>
+<span id="ajax"></span>
+
+<a href="patient.php">Back</a>&nbsp|
 <a href="../index.php">Home</a>&nbsp
 
 
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript"></script>
 
 
 </body>

@@ -8,14 +8,14 @@ if(isset($_POST['date']) &&
  isset($_POST['time']) &&
   isset($_POST['nature']) 
  && isset($_POST['complain']) 
-&& isset($_POST['designation'])){
+&& isset($_POST['department'])){
 
 // data gotten from user
 $date = $_POST['date'];
 $time = $_POST['time'];
 $nature = $_POST['nature'];
 $complain = $_POST['complain'];
-$department = $_POST['designation'];
+$department = $_POST['department'];
 
 
 // get the timestamp
@@ -38,7 +38,7 @@ $bookDetails = [
   'time' => $time,
   'nature' => $nature,
   'complain' => $complain,
-  'designation' => $department,
+  'department' => $department,
   'username' => $username
 ];
 
@@ -51,7 +51,7 @@ for ($counter=0; $counter < $countAllBookings ; $counter++) {
  $currentBooking = $allBookings[$counter];
  
 
- if($currentBookings == $username.".json"){
+ if($currentBooking == $username.".json"){
  alreadyExistsBooking(); 
 }
 

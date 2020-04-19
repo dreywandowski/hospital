@@ -1,5 +1,35 @@
 body{
-	background: url(1542.jpg);
+	background: url(../img/blur-hospital_1203-7972.jpg);
 	background-size: cover;
 	font-family: 'Zilla Slab', serif;
+	font-size: 22px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+a:link, a:visited {
+  background-color: green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+button{
+  background-color: orange; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+   border-radius: 8px;
 }

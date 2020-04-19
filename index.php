@@ -18,6 +18,9 @@ message();
 
 <body>
 	<center>
+		<div>
+			<img src="img/webpage-presents-high-quality-healthcare-clinic_81522-4378">
+		</div>
 		<br><br>
 	<p> <h4>This is a specialist hospital to cure ignorance!<br> Come as you are, it is completely free!!</h4></p><br>
 

@@ -1,3 +1,5 @@
+
+
 <body>
 <p><center> Hey <?php echo $_SESSION['fullName'] ?>, welcome!!<br><br>
 		 You are logged in as <?php echo $_SESSION['role'] ?><br><br><br>
@@ -14,11 +16,10 @@
 		<br>
 
 
-<br><br>
+<br><br><center>
 <a href="../index.php">Home</a>&nbsp|
-<a href="../forgot_pwd.php">Reset Password&nbsp|</a>
-<a href="../forgot_pwd.php">Reset Password</a>
-
+<a href="../forgot_pwd.php">Reset Password&nbsp</a>|
+</center>
 
 		<script type="text/javascript">
 			var logOut = document.getElementById('logout');

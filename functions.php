@@ -53,8 +53,10 @@ function resetSuccess(){
 
 
 function mailSent(){
-	   echo "<script>"."alert('A reset token has been sent to your email, open it to check')"."</script>";
-    echo "<p style='color:green'; 'text-decoration:bold'>"."Check your email"."</p>";
+	   //echo "<script>"."alert('A reset token has been sent to your email, open it to check')"."</script>";
+     $_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>"."A reset token has been sent to your email, open it to check"."</p>";
+  header("Location:forgot_pwd.php");
+
 }
 
 

@@ -39,10 +39,13 @@ if($currentUser == $username.".json"){
   $user = file_get_contents("dashboard/users/".$currentUser);
   $userObj = json_decode($user,true);
 
-$userObj['password']='1';   
-$data  = json_encode($userObj);
+echo "OLD PWD: ".$userObj['password'];
 
- //$db_save = file_put_contents("dashboard/users/".$username.".json", json_encode($userObj));
+$userObj['password'] = $pwd; 
+echo "new pwd : ".$userObj['password'];  
+//$data  = json_encode($userObj);
+
+ $db_save = file_put_contents("dashboard/users/".$username.".json", json_encode($userObj));
 resetSuccess();
 }
 

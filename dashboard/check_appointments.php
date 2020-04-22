@@ -64,7 +64,7 @@ for ($counter=0; $counter < $countAllBookings ; $counter++) {
 
 
 
-if ($department == $dept){
+if ($department == $dept){				
 	echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
        "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Time</th><th width=80>Nature of Appointment</th><th width=80>Initial complaint</th><th width=80>Department</th>".
       "&nbsp";
@@ -86,7 +86,7 @@ echo "</tr>" ."</table>"."</center>";
 /**else{
 	noAppointments();
 }
-**/
+**/								
 
 
 }

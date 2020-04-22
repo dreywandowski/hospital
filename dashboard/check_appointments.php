@@ -62,6 +62,12 @@ for ($counter=0; $counter < $countAllBookings ; $counter++) {
   $username = $bookDetails['username'];
  $department =  $bookDetails['department'];
 
+//echo print_r($date, true);
+$dated = $date['date'];
+$date = new DateTime($dated);
+$date_r = $date->format("d-m-Y");
+
+
 
 
 if ($department == $dept){				
@@ -72,7 +78,7 @@ if ($department == $dept){
      //while($row = mysqli_fetch_assoc($success)) {
  
  	echo "<tr>"."<td>".$username."</td>".
-    // "<td>".$dates. "</td>".
+    "<td>".$date_r. "</td>".
       "<td>".$time."</td>".
        "<td>".$nature."</td>".
         "<td>".$complain."</td>".
@@ -86,8 +92,8 @@ echo "</tr>" ."</table>"."</center>";
 /**else{
 	noAppointments();
 }
-**/								
-
+							
+**/
 
 }
 

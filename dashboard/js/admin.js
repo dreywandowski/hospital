@@ -14,14 +14,26 @@ function logout() {
 // shows the register form
 function toggle(){
 var show = document.getElementById("register");
+var clear = document.getElementById("clear");
 function shown() {
 	show.style.display = "block";
+	clear.style.display = "block";
 }
 shown();
 
 }
 
 document.getElementById("create").addEventListener("click", toggle, false);
+
+// closes the register form 
+function tog(){
+	var hide = document.getElementById("register");
+	function hide(){
+         hide.style.display = "none";
+	}
+	hide();
+}
+document.getElementById("clear").addEventListener("click", tog, false);
 
 
 // verifies that user has choosen a role type

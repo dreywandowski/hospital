@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../functions.php";
-
+checkUser();
 staffCheck();
 
 include 'welcome.php';

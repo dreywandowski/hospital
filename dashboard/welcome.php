@@ -1,5 +1,3 @@
-
-
 <body>
 <p><center> Hey <?php echo $_SESSION['fullName'] ?>, welcome!!<br><br>
 		 You are logged in as <?php echo $_SESSION['role'] ?><br><br><br>

@@ -1,9 +1,13 @@
 <?php
 session_start();
 
- $username = $_SESSION['username'];
+$username = $_SESSION['username'];
+
+
 
 require_once "../functions.php";
+checkUser();
+patientCheck();
 
 include 'welcome.php';
 

@@ -27,11 +27,13 @@ document.getElementById("create").addEventListener("click", toggle, false);
 
 // closes the register form 
 function tog(){
-	var hide = document.getElementById("register");
-	function hide(){
-         hide.style.display = "none";
+	var hidden = document.getElementById("register");
+	var clearer = document.getElementById("clear");
+	function remove(){
+         hidden.style.display = "none";
+         clearer.style.display = "none";
 	}
-	hide();
+	remove();
 }
 document.getElementById("clear").addEventListener("click", tog, false);
 

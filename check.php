@@ -1,9 +1,8 @@
-
-
 <?php
 session_start();
 
-
+require_once "functions.php";
+checkUserReset();
 // auto increase the ID of each user
 $allUsers = scandir("dashboard/users/");
 

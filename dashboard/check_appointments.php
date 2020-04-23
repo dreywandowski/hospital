@@ -31,18 +31,28 @@ tr:hover {
 
 <?php
 session_start();
+error_reporting(E_ERROR | E_PARSE);
+
 $username = $_SESSION['username'];
 $dept = $_SESSION['designation'];
 
 
 require_once "../functions.php";
+checkUser();
+staffCheck();
+//message();
+
 
 //get list of all appointments
 
- $allBookings = scandir("appointments/");
+$allBookings = scandir("appointments/");
  $countAllBookings = count($allBookings);
 
  //print_r($allBookings);
+
+ echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
+       "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Time</th><th width=80>Nature of Appointment</th><th width=80>Initial complaint</th><th width=80>Department</th>".
+      "&nbsp";
 
 for ($counter=0; $counter < $countAllBookings ; $counter++) { 
   $currentBooking = $allBookings[$counter];
@@ -68,12 +78,13 @@ $date = new DateTime($dated);
 $date_r = $date->format("d-m-Y");
 
 
+              
+
+//
 
 
 if ($department == $dept){				
-	echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Time</th><th width=80>Nature of Appointment</th><th width=80>Initial complaint</th><th width=80>Department</th>".
-      "&nbsp";
+	
 
      //while($row = mysqli_fetch_assoc($success)) {
  
@@ -85,16 +96,23 @@ if ($department == $dept){
          "<td>".$department."</td>";
      // "<td>"."<button class='dl' type='submit' value='$file'>". "Download"."</button>". "&nbsp";
  
+
+}
+
+
+//error_reporting(0);
+//error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+//ob_end_clean();
+
+}
 echo "</tr>" ."</table>"."</center>";
-}
 
+$json = $allBookings;
 
-/**else{
-	noAppointments();
-}
-							
-**/
+$string = ".json";
 
+if (($allBookings = ".") && ($allBookings = "..") && (!in_array($string, $json))) {
+  echo "<p style='color:red'; text-decoration:bold'>". "You have no appointments"."</p>";
 }
 
 ?>

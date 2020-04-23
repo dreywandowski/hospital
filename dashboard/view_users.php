@@ -34,6 +34,9 @@ tr:hover {
   session_start();
 
 require_once "../functions.php";
+adminCheck();
+
+error_reporting(E_ERROR | E_PARSE);
 
 //$username = $_POST["username"];
 
@@ -41,6 +44,10 @@ require_once "../functions.php";
 $allUsers = scandir("users/");
 
 $countAllUsers = count($allUsers);
+
+  echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
+       "<tr><th width=100>Full Name</th><th width=80>Role</th><th width=80>Designation</th><th width=80>Email</th><th width=80>Reg Time</th>".
+      "&nbsp";
 
 for($counter=0; $counter < $countAllUsers ; $counter++) { 
   $currentUser = $allUsers[$counter];
@@ -61,9 +68,7 @@ $user = file_get_contents("users/".$currentUser);
   $fullname = $userDetails['first_name']." ".$userDetails['last_name'];
 
         
-  echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=100>Full Name</th><th width=80>Role</th><th width=80>Designation</th><th width=80>Email</th><th width=80>Reg Time</th>".
-      "&nbsp";
+
  
   echo "<tr>"."<td>".$fullname."</td>".
      "<td>".$role. "</td>".
@@ -73,7 +78,7 @@ $user = file_get_contents("users/".$currentUser);
          
      // "<td>"."<button class='dl' type='submit' value='$file'>". "Download"."</button>". "&nbsp";
  
-echo "</tr>" ."</table>"."</center>";
+
 
 
 
@@ -85,7 +90,7 @@ echo "</tr>" ."</table>"."</center>";
 
 }
 
-
+echo "</tr>" ."</table>"."</center>";
 
   ?>
   </body>

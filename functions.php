@@ -14,6 +14,12 @@ else{
 
 }
 
+function checkUser(){
+if (!isset($_SESSION['username']) && !isset($_SESSION['password'])){
+header("Location:error.php");
+}
+}
+
 
 function alreadyExists(){
 	 $_SESSION['message'] ="<p style='color:red'; 'text-decoration:bold'>"."User already exists!"."</p>";
@@ -112,4 +118,10 @@ header("Location:appointments.php");
  	header("Location:Staff.php");
  }
 
+function checkUserReset(){
+	if (!isset($username)){
+		header("Location:error_mail.php");
+		
+	}
+}
 ?>

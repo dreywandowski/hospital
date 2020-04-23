@@ -42,7 +42,7 @@ if($currentUser == $username.".json"){
   $email = $userObj -> email;
 
   $fullName = $first_name." ".$last_name;
-
+  
 
 //echo $pwd." ".$role;
     $_SESSION['ID'] = $id;
@@ -52,7 +52,7 @@ if($currentUser == $username.".json"){
     $_SESSION['login'] = $currTime;
     $_SESSION['fullName'] = $fullName;
     $_SESSION['username'] = $username;
-    
+    $_SESSION['password'] = $pwd;
  $_SESSION['designation'] = $designation;
 
 //echo $role.$designation;

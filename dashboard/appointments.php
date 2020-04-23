@@ -11,13 +11,14 @@
 <?php
 session_start();
 
+
+require_once "../functions.php";
+checkUser();
+patientCheck();
 	if(isset($_SESSION['message'])){
 $message = $_SESSION['message'];
 echo "$message";
-//session_destroy();	
 }
-
-require_once "../functions.php";
 
 //$_SESSION['usermame'] = $username;
 /**

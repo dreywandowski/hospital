@@ -92,6 +92,15 @@ button{
   font-size: 25px;
    border-radius: 8px;
 }
+#clear{
+	background-color: black; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+   border-radius: 8px;
+}
 
 </style>
 <body>
@@ -156,9 +165,9 @@ button{
 <br>
 	
 <button id="submit" name= "register" type="submit"> Sign Up</button><br><br>
-<button id="clear"   type="button"> Close this window</button>
-</form><br><br>
 
+</form><br><br>
+<button id="clear" class="hidden"  type="button"> Close this window</button><br><br>
 
 
 

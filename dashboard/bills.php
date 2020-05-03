@@ -62,13 +62,22 @@ pay.addEventListener("click", payWithRave, false);
     var amount = document.getElementById("amount").value;
     var number = document.getElementById("phone").value;
 
+    function getRandomString(length) {
+    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    for ( var i = 0; i < length; i++ ) {
+        result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+    }
+    return result;
+}
+
         var x = getpaidSetup({
             PBFPubKey: API_publicKey,
             customer_email: email,
             amount:amount,
             customer_phone: number,
             currency: "NGN",
-            txref: "rave-123456",
+            txref: getRandomString(13),
             meta: [{
                 metaname: "flightID",
                 metavalue: "AP1234"

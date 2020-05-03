@@ -5,10 +5,6 @@ session_start();
 require_once "functions.php";
 message();
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4c9650f3cc9318e1729b51bd73d907b6760d9399
 ?>
 
 <!doctype html>
@@ -28,12 +24,9 @@ message();
 		<br><br>
 	<p> <h4>This is a specialist hospital to cure ignorance!<br> Come as you are, it is completely free!!</h4></p><br>
 
-<<<<<<< HEAD
 <div id="weather">
 </div>
-=======
 
->>>>>>> 4c9650f3cc9318e1729b51bd73d907b6760d9399
 
 <div>
 <a href="register.php">Sign Up</a>&nbsp|

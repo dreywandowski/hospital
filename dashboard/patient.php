@@ -30,11 +30,10 @@ include 'welcome.php';
 </style>
 <body>
 <center><br><a href="bills.php"> Pay Bills</a>&nbsp|
-<<<<<<< HEAD
 <a href="appointments.php"> Book Appointment </a>&nbsp|
 <a href="check_payments.php"> Check Transaction History </a>&nbsp</center>
-=======
-<a href="appointments.php"> Book Appointment </a></center>
->>>>>>> 4c9650f3cc9318e1729b51bd73d907b6760d9399
+
+
+
 </body>
 </html>

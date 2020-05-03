@@ -48,10 +48,12 @@ staffCheck();
 $allBookings = scandir("appointments/");
  $countAllBookings = count($allBookings);
 
+
+
  //print_r($allBookings);
 
  echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Time</th><th width=80>Nature of Appointment</th><th width=80>Initial complaint</th><th width=80>Department</th>".
+       "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Time</th><th width=80>Nature of Appointment</th><th width=80>Initial complaint</th><th width=80>Department</th>"."<th width=80>Payment Status</th>".
       "&nbsp";
 
 for ($counter=0; $counter < $countAllBookings ; $counter++) { 
@@ -71,6 +73,7 @@ for ($counter=0; $counter < $countAllBookings ; $counter++) {
   $complain = $bookDetails['complain'];
   $username = $bookDetails['username'];
  $department =  $bookDetails['department'];
+ $payment_status = $bookDetails['payment_confirmed'];
 
 //echo print_r($date, true);
 $dated = $date['date'];
@@ -93,7 +96,8 @@ if ($department == $dept){
       "<td>".$time."</td>".
        "<td>".$nature."</td>".
         "<td>".$complain."</td>".
-         "<td>".$department."</td>";
+         "<td>".$department."</td>".
+         "<td>".$payment_status."</td>";
      // "<td>"."<button class='dl' type='submit' value='$file'>". "Download"."</button>". "&nbsp";
  
 

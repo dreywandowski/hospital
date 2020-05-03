@@ -43,6 +43,24 @@ for ($counter=0; $counter < $countAllPayments ; $counter++) {
   $db_save = file_put_contents("payments/".$username.".json", json_encode($paymentDetails));
 
 
+  //updates the appointments to reflect that user has paid
+
+$allBookings = scandir("appointments/");
+ $countAllBookings = count($allBookings);
+
+
+for ($counter=0; $counter < $countAllBookings ; $counter++) { 
+  $currentBooking = $allBookings[$counter];
+  //print_r($currentBooking);
+if($currentBooking == $username.".json"){
+  $book = file_get_contents("appointments/".$currentBooking);
+  $bookDetails = json_decode($book, true);
+
+  $bookDetails['payment_confirmed'] = "Payment Confirmed"; 
+  $db_save = file_put_contents("appointments/".$username.".json", json_encode($bookDetails));
+}
+}
+
 if ($db_save){
 //echo "Payment registered sucessfully";
 }

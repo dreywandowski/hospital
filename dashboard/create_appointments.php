@@ -40,7 +40,8 @@ $bookDetails = [
   'nature' => $nature,
   'complain' => $complain,
   'department' => $department,
-  'username' => $username
+  'username' => $username,
+  'payment_confirmed' => 'No payments yet'
 ];
 
 

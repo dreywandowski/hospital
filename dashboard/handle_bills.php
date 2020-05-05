@@ -5,7 +5,7 @@ $username = $_SESSION['username'];
 
 //echo "yeahh";
 
-
+$ref = $_POST['ref'];
 $email = $_POST['email'];
 $amount = $_POST['amount'];
 $phone = $_POST['phone'];
@@ -26,7 +26,8 @@ $paymentDetails = [
   'username' => $username,
   'date' => $date_r,
   'amount' => $amount,
-  'email' => $email
+  'email' => $email,
+  'ref' => $ref
 ];
 
 
@@ -75,7 +76,5 @@ echo "something went wrong";
 
 
 }
-
-
 
 ?>

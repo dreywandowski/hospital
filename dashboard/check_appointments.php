@@ -120,3 +120,7 @@ if (($allBookings = ".") && ($allBookings = "..") && (!in_array($string, $json))
 }
 
 ?>
+
+<br>
+<br>
+ <a href="staff.php">Back</a>&nbsp

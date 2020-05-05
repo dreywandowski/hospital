@@ -47,7 +47,7 @@ $allPayments = scandir("payments/");
 $countAllPayments = count($allPayments);
 
 echo  "<center>"."<table id='table' border cellpadding=3>" . "<h4>".
-       "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Amount</th><th width=80>Email</th>".
+       "<tr><th width=100>Username</th><th width=80>Date</th><th width=80>Amount</th><th width=80>Email</th>"."<th width=80>Transaction ID</th>".
       "&nbsp";
 
 for ($counter=0; $counter < $countAllPayments ; $counter++) { 
@@ -63,15 +63,21 @@ $pay = file_get_contents("payments/".$currentPayment);
   $amt = $payDetails['amount'];
   $date = $payDetails['date'];
   $email = $payDetails['email'];	
+  $ref = $payDetails['ref'];
  
 
 if ($user == $username){	
  	echo "<tr>"."<td>".$user."</td>".
     "<td>".$date. "</td>".
       "<td>"."#".$amt."</td>".
-       "<td>".$email."</td>";
+       "<td>".$email."</td>".
+       "<td>".$ref."</td>";
 
 }
 }
 echo "</tr>" ."</table>"."</center>";
  ?>
+
+<br>
+<br>
+ <a href="patient.php">Back</a>&nbsp

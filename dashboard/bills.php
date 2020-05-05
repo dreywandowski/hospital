@@ -44,7 +44,8 @@ patientCheck();
 </form>
 
 
-    <button type="button" id="pay">Pay Now</button>
+    <button type="button" id="pay">Pay Now</button><br><br>
+    <a href="patient.php">Back</a>&nbsp
 
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
@@ -71,6 +72,8 @@ pay.addEventListener("click", payWithRave, false);
     return result;
 }
 
+var ref = getRandomString(13);
+
         var x = getpaidSetup({
             PBFPubKey: API_publicKey,
             customer_email: email,
@@ -84,18 +87,23 @@ pay.addEventListener("click", payWithRave, false);
             }],
             onclose: function() {},
             callback: function(response) {
-                var txref = response.data.txRef; 
-                var msg = response.data.respmsg;// collect txRef returned and pass to a                    server page to complete status check.
+                var txref = response.tx.txRef;
+                var code = response.tx.chargeResponseCode; 
+                var msg = response.data.respmsg;
+                var amtt = response.tx.charged_amount;
+                var status = response.tx.status;
+                // collect txRef returned and pass to a                    server page to complete status check.
                 console.log("This is the response returned after a charge", response);
-                if (msg = "Approved. successful"){
-    
-                  alert("Thanks for your payment. Check your email for confirmation");
-                 
-               
+                if ((code = "00") && (amtt == amount)){
+                   // window.location = "handle_bills.php";
+                console.log("Input amount " + amount +  "Proccessed amount" + amtt + txref);
+               alert("Thanks for your payment. Check your email for confirmation");
+
 				$.post("handle_bills.php", {
                     
                        email : email,
                        amount : amount,
+                       ref : ref,
                        phone : number
 
 				},  function(data,status){

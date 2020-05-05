@@ -40,3 +40,4 @@ A. user: admin
    user: omolola
    password: 1234
    
+11. Patients MUST book appointments first BEFORE making payments for proper verification.

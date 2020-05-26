@@ -2,7 +2,15 @@
 session_start();
 
 ?>
-
+<!doctype html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Admin Creation Page </title>
+		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+</head>
+<body>
 <form action="redirect.php" method="POST" >
 		
 		<h3><u> Fill in your details</u></h3>
@@ -52,3 +60,5 @@ session_start();
 	
 <button type="submit"> Create Admin</button>
 </form>
+</body>
+</html>

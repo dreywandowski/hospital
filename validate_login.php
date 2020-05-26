@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "functions.php";
 
 $username = $_POST["username"];
 $password = $_POST["password"];
@@ -41,7 +42,7 @@ if($currentUser == $username.".json"){
   $email = $userObj -> email;
 
   $fullName = $first_name." ".$last_name;
-
+  
 
 //echo $pwd." ".$role;
     $_SESSION['ID'] = $id;
@@ -51,7 +52,7 @@ if($currentUser == $username.".json"){
     $_SESSION['login'] = $currTime;
     $_SESSION['fullName'] = $fullName;
     $_SESSION['username'] = $username;
-    
+    $_SESSION['password'] = $pwd;
  $_SESSION['designation'] = $designation;
 
 //echo $role.$designation;
@@ -61,8 +62,7 @@ if($currentUser == $username.".json"){
 // verify password
   if (password_verify($password, $pwd)){
   
-    $_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>"."User logged in ok"."</p>";
-
+    loggedIn();
 
 switch ($role) {
     case "Patient":
@@ -79,15 +79,6 @@ switch ($role) {
         echo "No roles selected";
 }
 
-/**
-// redirect based on access type
-    if ($role == "Patient"){
-        header("Location:dashboard/Patient.php");
-    }
-    else if ($role = "staff"){
-      header("Location:dashboard/Staff.php");
-    }
-  **/
 
  }
 
@@ -95,8 +86,7 @@ switch ($role) {
  // redirect to home page if login failed
 
  else{
-  $_SESSION['message'] ="<p style='color:red'; 'text-decoration:bold'>"."User credentials incorrect"."</p>";
-  header("Location:index.php");
+  logFail();
  }
 
 

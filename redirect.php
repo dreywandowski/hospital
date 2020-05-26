@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once "functions.php";
+
 if(isset($_POST['first_name']) &&
  isset($_POST['last_name']) &&
   isset($_POST['username']) 
@@ -34,7 +36,7 @@ $allUsers = scandir("dashboard/users/");
 $countAllusers = count($allUsers);
 $newUserID = ($countAllusers -1);
 
-echo $newUserID;
+//echo $newUserID;
 
 
 // session variables for use throughout the program
@@ -75,30 +77,27 @@ for ($counter=0; $counter < $countAllusers ; $counter++) {
  
 
  if($currentUser == $username.".json"){
-  $_SESSION['message'] ="<p style='color:red'; 'text-decoration:bold'>"."User already exists!"."</p>";
-    header("Location:index.php");
-    die();
- }
-    
+ alreadyExists(); 
 }
 
 
   $db_save = file_put_contents("dashboard/users/".$username.".json", json_encode($userDetails));
 
+
 if ($db_save){
-$_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>".$first_name.", "."Registration successful, you can now login"."</p>";
-header("Location:index.php");
+regSuccess();
 }
 
 
 else{
 
-$_SESSION['message'] ="<p style='color:red'; 'text-decoration:bold'>"."We are unable to sign you up. Sorry"."</p>";
+regFail();
     
 }
   
 
 
+}
 }
 
 ?>

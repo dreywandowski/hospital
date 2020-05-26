@@ -1,9 +1,10 @@
 <?php
 session_start();
 
-if ($_SESSION['role'] != 'admin'){
-	header("Location:error.php");
-}
+require_once "../functions.php";
+
+adminCheck();
+
 $username = $_SESSION['username'];
 ?>
 
@@ -14,9 +15,11 @@ $username = $_SESSION['username'];
 <style type="text/css">
 		body{
 			font-family: 'Raleway', sans-serif;
-			background-image: url('network-engineer-administrator-server-room-admin-technician-worker-data-center-69671306.jpg');
+			background-image: url(../img/businesswoman-working-desk-using-laptop-check-data-finance-office_34152-1485.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
+			font-size: 25px;
+
 		}
 		h3{
 			color:white;
@@ -60,19 +63,58 @@ tr:hover {
   float: right;
   padding: 6px 20px;
 }
+#view{
+	clear: both;
+	float: right;
+margin-right: 49%;
+}
+
+a:link, a:visited {
+  background-color: green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+button{
+  background-color: orange; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+   border-radius: 8px;
+}
+#clear{
+	background-color: black; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+   border-radius: 8px;
+}
+
 </style>
 <body>
-<p> <center> <?php echo "<p style='color:red'; 'text-decoration:bold' 'font-size: 20px';>"."Hey  ". $_SESSION['username'].", welcome!!"."</p>" ?></center></p>
+<p> <center> <?php echo "<p style='color:coffee'; 'text-decoration:bold' 'font-size: 30px';>"."Hey  ". $_SESSION['username'].", welcome!!"."</p>" ?></center></p>
 <br><br>
 
-<script src="jquery-3.2.1.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
 
 
 
   	<span id="ajax"></span><br><br><br>
 
 
-  	<button id="create"> Create New User</button>
+  	<button id="create" class="button"> Create New User</button><br>
 
 <form action="create_user.php" class="hidden" id="register" enctype="multipart/form-data" method="POST">
 		
@@ -122,9 +164,15 @@ tr:hover {
 <br>
 <br>
 	
-<button id="submit" name= "register" type="submit"> Sign Up</button>
-</form>
+<button id="submit" name= "register" type="submit"> Sign Up</button><br><br>
 
+</form><br><br>
+<button id="clear" class="hidden"  type="button"> Close this window</button><br><br>
+
+
+
+
+<a href="view_users.php">View All Users</a><br>
 
 
 

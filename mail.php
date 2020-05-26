@@ -1,11 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Mail</title>
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+    body{
+    background: url(img/28521.jpg);
+    background-size: cover;
+    font-family: 'Zilla Slab', serif;
+    font-size: 22px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+a:link, a:visited {
+  background-color: green;
+  color: white;
+  padding: 14px 25px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+button{
+  background-color: orange; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+   border-radius: 8px;
+}
 <?php
 
 
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\PHPMailer.php";
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\SMTP.php";
     require "C:\wamp64\www\StartNG\health\PHPMailer\src\Exception.php";
-
-
+ 
+    require_once "functions.php";
+    
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->IsSMTP(); 
 
@@ -47,8 +91,7 @@ $_SESSION['token'] = $token;
 
 
      else {
-        echo "<script>"."alert('A reset token has been sent to your email, open it to check')"."</script>";
-    echo "<p style='color:green'; 'text-decoration:bold'>"."Check your email at ".$emaildb."</p>";
+     mailSent();
      }
 
 ?>

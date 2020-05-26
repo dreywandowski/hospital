@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "functions.php";
 
 if(isset($_POST['user_mail']) &&
  isset($_POST['pwd']) &&
@@ -38,14 +39,14 @@ if($currentUser == $username.".json"){
   $user = file_get_contents("dashboard/users/".$currentUser);
   $userObj = json_decode($user,true);
 
-$userObj['password']='1';   
-$data  = json_encode($userObj);
+echo "OLD PWD: ".$userObj['password'];
 
- //$db_save = file_put_contents("dashboard/users/".$username.".json", json_encode($userObj));
+$userObj['password'] = $pwd; 
+echo "new pwd : ".$userObj['password'];  
+//$data  = json_encode($userObj);
 
-  $_SESSION['message'] ="<p style='color:green'; 'text-decoration:bold'>"."Password reset successful, login with your new details"."</p>";
-  header("Location:index.php");
-
+ $db_save = file_put_contents("dashboard/users/".$username.".json", json_encode($userObj));
+resetSuccess();
 }
 
 

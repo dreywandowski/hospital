@@ -41,3 +41,6 @@ A. user: admin
    password: 1234
    
 11. Patients MUST book appointments first BEFORE making payments for proper verification.
+
+
+### Live link => https://adura.xyz/hospital/

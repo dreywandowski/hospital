@@ -43,4 +43,4 @@ A. user: admin
 11. Patients MUST book appointments first BEFORE making payments for proper verification.
 
 
-### Live link => https://adura.xyz/hospital/
+### Live link => https://dreywandowski.xyz/hospital/
